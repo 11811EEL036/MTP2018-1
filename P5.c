@@ -1,41 +1,40 @@
-//Nome: LUCAS SILVA PEREIRA	
-//Matrícula: 11811EEL036
+/* Aluno:  LUCAS SILVA PERERIA
+Matricula: 11811ELL036 */
+
 #include<stdio.h>
+
 int main(){
-	int o;
-	printf("1. Codificar\n2. Decodificar:\n");
-	scanf("%d",&o);getchar();
-	if(o==1){
-		char str[256];
-		int *pc,i=0;
+
+	char str[256];
+	int i, op;
+	
+	printf("Escolha uma opcao:\n1-Codificar\n2-Descodificar\n");
+	scanf("%d", &op); getchar();
+	
+	if(op==1){
+		fgets(str);
 		
-		printf("O que quer codificar: ");
-		gets(str);
-		fflush(stdin);
+		int *pi;
 		
-		printf("A palavra codificada e: ");
-		for(pc=(int*)str; pc < ((int *) str) + sizeof(str); pc++){
-			if(*pc==0)
+		for(i=0; str[i]!='\0'; i+=4){
+			pi = (int *) &str[i];
+			if(str[i+4]!='\0')
+				printf("%d, ", *pi);
+			else
+				printf("%d", *pi);		
+		}
+	}else if(op==2){
+		int num[64];
+		char aux;
+		
+		for(i=0; i<64; i++){
+			scanf("%d%c", &num[i], &aux);
+			if(aux!=',')
 				break;
-			printf("%d, ",*pc);
 		}
 		
+		printf("%s", &num);
 	}
-	if(o==2){
-		char *pd;
-		int vet[10];
-		int j,n=0;
-		printf("O que quer decodificar: ");
-		for(j=0;j<sizeof(char);j++){
-			scanf("%d, ",&vet[j]);
-			getchar();
-		}
-		for(n;n<sizeof(char);n++)
-		pd=((char*)&vet[n])-sizeof(int);
-		for(;pd<(char*)&vet+sizeof(vet);pd++){
-			
-			printf("%c",*pd);
-		}
-		printf("%d",vet[1]);
-	}
+		
+	return 0;
 }
