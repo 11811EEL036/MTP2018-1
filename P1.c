@@ -9,7 +9,7 @@ int main(){
 char bits[256];
 int estado=0, i=0;
 
-scanf("%s", &bits);
+scanf("%s", bits);
 
 for(i=0; bits[i]!='\0'; i++){
 	if(bits[i]=='0'&&estado==0){
