@@ -1,6 +1,5 @@
 /* Aluno:  LUCAS SILVA PERERIA
-Matricula: 11811ELL036 */
-
+Matricula: 11811EEL036 */
 #include<stdio.h>
 
 void bin(unsigned int num)
