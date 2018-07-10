@@ -17,11 +17,11 @@ struct Produto{
 
 void cadastrar(struct Produto Quant[], int i)
 {
-	scanf("%s", &Quant[i].nome);
-	scanf("%f", &Quant[i].preco);
-	scanf("%f", &Quant[i].dimensoes.largura);
-	scanf("%f", &Quant[i].dimensoes.profundidade);
-	scanf("%f", &Quant[i].dimensoes.altura);
+	scanf("%s", Quant[i].nome);
+	scanf("%f", Quant[i].preco);
+	scanf("%f", Quant[i].dimensoes.largura);
+	scanf("%f", Quant[i].dimensoes.profundidade);
+	scanf("%f", Quant[i].dimensoes.altura);
 	printf("Produto %d cadastrado com sucesso!\n", i+1);
 }
 
